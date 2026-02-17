@@ -1,0 +1,50 @@
+/* Селектор по элементу */
+body {
+    background-color: #111;
+    color: #eaeaea;
+    font-family: Arial, sans-serif;
+}
+
+/* Селектор по элементу */
+h1 {
+    color: #7af3fe;
+    text-align: center;
+}
+
+/* Селектор по классу */
+.section-text {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Селектор по идентификатору */
+#games {
+    color: #66ff66;
+}
+
+/* Комбинированный селектор */
+ul li {
+    color: #cccccc;
+}
+
+/* Оформление нумерованного списка */
+ol {
+    list-style-type: upper-roman;
+    font-weight: bold;
+}
+
+/* Оформление маркированного списка */
+ul {
+    list-style-type: square;
+    padding-left: 25px;
+}
+
+/* Ссылки */
+a {
+    color: #24c1f1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

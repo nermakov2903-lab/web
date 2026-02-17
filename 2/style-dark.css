@@ -1,0 +1,13 @@
+body {
+    background-color: #ffffff;
+    color: #9d9d9d;
+    font-family: "Times New Roman", serif;
+}
+
+h1, h2 {
+    color: darkblue;
+}
+
+a {
+    color: darkred;
+}
