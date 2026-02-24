@@ -1,0 +1,164 @@
+/* ФОН */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-image: url("images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.menu {
+    list-style: none;      /* убрать маркеры */
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+
+    display: inline;       /* элементы в одну строку */
+    margin-right: 25px;    /* расстояние между пунктами */
+}
+
+.menu a {
+
+    text-decoration: underline;  /* подчёркнутый текст */
+    color: #00fff2;              /* цвет */
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #ff00c8;              /* цвет при наведении */
+}
+
+/* Контейнер */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 15px;
+}
+
+/* Заголовок */
+h1 {
+    text-align: center;
+    color: #00fff2;
+    text-shadow: 0 0 15px #00fff2;
+}
+
+/* ABSOLUTE */
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #00fff2;
+    color: black;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+/* FIXED */
+.to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff00c8;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff00c8;
+}
+
+/* RELATIVE + ABSOLUTE */
+.about-box {
+    position: relative;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Картинки */
+.main-img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00fff2;
+}
+
+/* FLOAT — колонки */
+.col {
+    float: left;
+    width: 30%;
+    margin: 1.5%;
+    background: #1c1c1c;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00fff2;
+}
+
+/* FLOAT — игры */
+.coll {
+
+    width: 20%;
+    margin: 1.5%;
+    background: #1c1c1c;
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #00fff2;
+}
+
+/* CLEAR */
+.clear-block {
+    clear: both;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #aaa;
+}
+
+/* Оборудование — текст слева, фото справа */
+.equipment-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 20px 0;
+}
+
+.equipment-text {
+    width: 50%;
+}
+
+.equipment-image {
+    width: 50%;
+}
+
+.equipment-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00fff2;
+}

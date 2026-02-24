@@ -1,4 +1,34 @@
+body {
+    background-image: url("background.png");
+    background-size: cover;        /* растянуть на весь экран */
+    background-position: center;   /* центрировать */
+    background-repeat: no-repeat;  /* не повторять */
+    background-attachment: fixed;  /* зафиксировать фон */
+
+    color: #eaeaea;
+    font-family: Arial, sans-serif;
+}
+/* Свойства шрифта (пункт 4 задания) */
+
+/* размер шрифта */
+p {
+    font-size: 16px;
+}
+
+/* начертание шрифта (italic) */
+#services {
+    font-style: italic;
+}
+
+/* оформление текста */
+ol li {
+    list-style-type: circle;
+    font-size: 15px;
+    text-decoration: bold;
+}
+
 /* Селектор по элементу */
+/* 3. Изменение цвета и фона элементов */
 body {
     background-color: #111;
     color: #eaeaea;
@@ -27,12 +57,14 @@ ul li {
     color: #cccccc;
 }
 
+/* 5. Оформление списков стилями */
 /* Оформление нумерованного списка */
 ol {
     list-style-type: upper-roman;
     font-weight: bold;
 }
 
+/* 5. Оформление списков стилями */
 /* Оформление маркированного списка */
 ul {
     list-style-type: square;
