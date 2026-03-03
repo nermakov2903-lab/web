@@ -74,7 +74,10 @@ h1 {
     box-shadow: 0 0 15px #ff00c8;
 }
 
+
 /* RELATIVE + ABSOLUTE */
+/*относительным позиционированием*/
+
 .about-box {
     position: relative;
     background: #111;
