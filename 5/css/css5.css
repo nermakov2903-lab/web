@@ -1,0 +1,94 @@
+/* ===== ФОН =====
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("images/background.png") center/cover fixed;
+    color: #ffffff;
+}
+*/
+body {
+    margin: 0;
+    background: url("../images/background1.png") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+/* ===== НАВБАР ===== */
+.navbar-inverse {
+    background-color: #000;
+    border-color: #00fff2;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #00fff2 !important;
+    font-weight: bold;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff !important;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #ff00c8 !important;
+}
+
+/* ===== ЗАГОЛОВКИ ===== */
+h1, h2 {
+    color: #00fff2;
+    text-shadow: 0 0 15px #00fff2;
+}
+
+/* ===== КАРТИНКИ ===== */
+.img-responsive {
+    box-shadow: 0 0 20px #00fff2;
+    border-radius: 15px;
+}
+
+/* ===== ПАНЕЛИ ===== */
+.panel {
+    background: #111;
+    border: 1px solid #00fff2;
+    box-shadow: 0 0 15px #00fff2;
+}
+
+.panel-heading {
+    font-weight: bold;
+}
+
+/* ===== КНОПКИ ===== */
+.btn-primary {
+    background-color: #00fff2;
+    border: none;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #ff00c8;
+    color: #fff;
+}
+
+/* ===== ТАБЛИЦЫ ===== */
+.table {
+    background: #111;
+    color: #fff;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #1c1c1c;
+}
+
+/* ===== INPUT GROUP ===== */
+.input-group-addon {
+    background: #00fff2;
+    color: #000;
+    border: none;
+}
+
+/* ===== ФУТЕР ===== */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    color: #aaa;
+}

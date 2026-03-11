@@ -1,0 +1,137 @@
+/* =========================
+   ПЕРЕМЕННЫЕ
+========================= */
+
+$main-color: #00fff2;
+$accent-color: #ff00c8;
+$text-color: #ffffff;
+// $text-color: #FF0000;
+$dark-bg: #111;
+$panel-bg: #1c1c1c;
+
+/* =========================
+   МИКСИНЫ
+========================= */
+
+@mixin glow($color) {
+  box-shadow: 0 0 20px $color;
+}
+
+@mixin center-text {
+  text-align: center;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  margin: 0;
+  background: url("../images/background1.png") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: $text-color;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar-inverse {
+  background-color: #000;
+  border-color: $main-color;
+
+  .navbar-brand {
+    color: $main-color !important;
+    font-weight: bold;
+  }
+
+  .navbar-nav > li > a {
+    color: $text-color !important;
+
+    &:hover {
+      color: $accent-color !important;
+    }
+  }
+}
+
+/* =========================
+   ЗАГОЛОВКИ
+========================= */
+
+h1, h2 {
+  color: $main-color;
+  text-shadow: 0 0 15px $main-color;
+}
+
+/* =========================
+   ИЗОБРАЖЕНИЯ
+========================= */
+
+.img-responsive {
+  @include glow($main-color);
+  border-radius: 15px;
+}
+
+/* =========================
+   ПАНЕЛИ
+========================= */
+
+.panel {
+  background: $dark-bg;
+  border: 1px solid $main-color;
+  @include glow($main-color);
+
+  .panel-heading {
+    font-weight: bold;
+  }
+}
+
+/* =========================
+   КНОПКИ
+========================= */
+
+.btn-primary {
+  background-color: $main-color;
+  border: none;
+  color: #000;
+
+  &:hover {
+    background-color: $accent-color;
+    color: $text-color;
+  }
+}
+
+/* =========================
+   ТАБЛИЦЫ
+========================= */
+
+.table {
+  background: $dark-bg;
+  color: $text-color;
+
+  &-striped > tbody > tr:nth-of-type(odd) {
+    background-color: $panel-bg;
+  }
+}
+
+/* =========================
+   INPUT GROUP
+========================= */
+
+.input-group-addon {
+  background: $main-color;
+  color: #000;
+  border: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  @include center-text;
+  color: #aaa;
+}

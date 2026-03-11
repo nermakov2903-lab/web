@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Киберклуб</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/css4.css">
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon glyphicon-fire"></span>
+                    CYBER CLUB
+                </a>
+            </div>
+
+            <ul class="nav navbar-nav">
+                <li><a href="#about">О клубе</a></li>
+                <li><a href="#equipment">Оборудование</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#games">Игры</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- О клубе -->
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h1>КИБЕРКЛУБ</h1>
+        </div>
+    </div>
+
+    <div class="row" id="about">
+        <div class="col-md-6 col-sm-12">
+            <h2>О клубе</h2>
+            <p>Современный компьютерный клуб с мощными ПК и атмосферой киберспорта.</p>
+
+            <button class="btn btn-danger">
+                <span class="glyphicon glyphicon-star"></span>
+                NEW
+            </button>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+            <img src="images/club.webp" class="img-responsive img-rounded">
+        </div>
+    </div>
+
+    <!-- Оборудование -->
+    <div class="row" id="equipment">
+        <div class="col-md-6">
+            <img src="images/pc.jpg" class="img-responsive img-thumbnail">
+        </div>
+
+        <div class="col-md-6">
+            <h2>Оборудование</h2>
+            <p>Современные игровые ПК, быстрые SSD и профессиональная периферия.</p>
+
+            <div class="btn-group">
+                <button class="btn btn-primary">RTX</button>
+                <button class="btn btn-success">SSD</button>
+                <button class="btn btn-info">144Hz</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Услуги -->
+    <div class="row text-center" id="services">
+        <h2>Услуги</h2>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Аренда ПК</div>
+                <div class="panel-body">Почасовая аренда</div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">PlayStation</div>
+                <div class="panel-body">Зона PS5</div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">Турниры</div>
+                <div class="panel-body">Еженедельные турниры</div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-danger">
+                <div class="panel-heading">VIP</div>
+                <div class="panel-body">Отдельная зона</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Игры -->
+    <div class="row" id="games">
+        <div class="col-xs-12">
+            <h2 class="text-center">Игры</h2>
+        </div>
+
+        <div class="col-sm-4">
+            <table class="table table-striped table-bordered">
+                <tr><th>Игра</th></tr>
+                <tr><td>GTA 5</td></tr>
+                <tr><td>FarCry 6</td></tr>
+                <tr><td>Valorant</td></tr>
+            </table>
+        </div>
+
+        <div class="col-sm-8">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-search"></span>
+                </span>
+                <input type="text" class="form-control" placeholder="Поиск игры">
+            </div>
+        </div>
+    </div>
+
+<div class="row" id="stats">
+
+<div class="col-xs-12 text-center">
+<h2>Статистика игроков</h2>
+
+<p>Игровые часы за неделю:</p>
+<p id="result"></p>
+<!--<button class="btn btn-warning btn-lg" onclick="calculateStats()">-->
+<!--Показать статистику-->
+<!--</button>-->
+<button class="btn btn-primary" onclick="calculateStats()">
+    ПОКАЗАТЬ СТАТИСТИКУ
+</button>
+
+</div>
+
+</div>
+
+    <hr>
+
+    <div class="row">
+    <div class="col-xs-12 text-center">
+        <a href="form.html" class="btn btn-info btn-lg">
+            <span class="glyphicon glyphicon-envelope"></span>
+            Обратная связь
+        </a>
+    </div>
+</div>
+
+    <footer class="text-center">
+        © 2026 Игровой компьютерный клуб
+    </footer>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js" defer></script>
+
+</body>
+</html>
