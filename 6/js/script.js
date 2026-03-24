@@ -2,7 +2,7 @@
 var hours = [3, 5, 2, 6, 4];
 
 
-// 1. сумма часов
+// сумма часов
 function sumHours(arr) {
 
     var sum = 0;
@@ -15,7 +15,7 @@ function sumHours(arr) {
 }
 
 
-// 2. сколько раз игрок играл больше 4 часов
+// сколько раз игрок играл больше 4 часов(подсчет кол-ва значений)
 function countLongSessions(arr) {
 
     var count = 0;
@@ -32,7 +32,7 @@ function countLongSessions(arr) {
 }
 
 
-// 3. сумма квадратов часов
+// сумма квадратов часов(вычисление суммы квадратов элементов)
 function sumSquares(arr) {
 
     var sum = 0;

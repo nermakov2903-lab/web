@@ -10,7 +10,7 @@ $dark-bg: #111;
 $panel-bg: #1c1c1c;
 
 /* =========================
-   МИКСИНЫ(примеси)
+   МИКСИНЫ
 ========================= */
 
 @mixin glow($color) {
@@ -36,7 +36,6 @@ body {
 /* =========================
    NAVBAR
 ========================= */
-// вложенные селекторы, ! для перекрыть стили Bootstrap
 
 .navbar-inverse {
   background-color: #000;
@@ -50,7 +49,6 @@ body {
   .navbar-nav > li > a {
     color: $text-color !important;
 
-    // амперсанд для ссылки на внеш селектор и псевдокласс, цвет ссылок
     &:hover {
       color: $accent-color !important;
     }
@@ -98,7 +96,6 @@ h1, h2 {
   border: none;
   color: #000;
 
-  // при наведении
   &:hover {
     background-color: $accent-color;
     color: $text-color;
@@ -113,7 +110,6 @@ h1, h2 {
   background: $dark-bg;
   color: $text-color;
 
-  // соединение род. селектора table + striped
   &-striped > tbody > tr:nth-of-type(odd) {
     background-color: $panel-bg;
   }
