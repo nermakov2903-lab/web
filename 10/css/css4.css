@@ -1,126 +1,96 @@
+@charset "UTF-8";
 /* =========================
    ПЕРЕМЕННЫЕ
 ========================= */
-
-$main-color: #00fff2;
-$accent-color: #ff00c8;
-$text-color: #ffffff;
-// $text-color: #FF0000;
-$dark-bg: #111;
-$panel-bg: #1c1c1c;
-
 /* =========================
    МИКСИНЫ
 ========================= */
-
-@mixin glow($color) {
-  box-shadow: 0 0 20px $color;
-}
-
-@mixin center-text {
-  text-align: center;
-}
-
 /* =========================
    BODY
 ========================= */
-
 body {
   margin: 0;
   background: url("../images/background1.png") center center no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  color: $text-color;
+  color: #ffffff;
 }
 
 /* =========================
    NAVBAR
 ========================= */
-
 .navbar-inverse {
   background-color: #000;
-  border-color: $main-color;
-
-  .navbar-brand {
-    color: $main-color !important;
-    font-weight: bold;
-  }
-
-  .navbar-nav > li > a {
-    color: $text-color !important;
-
-    &:hover {
-      color: $accent-color !important;
-    }
-  }
+  border-color: #00fff2;
+}
+.navbar-inverse .navbar-brand {
+  color: #00fff2 !important;
+  font-weight: bold;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #ffffff !important;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #ff00c8 !important;
 }
 
 /* =========================
    ЗАГОЛОВКИ
 ========================= */
-
 h1, h2 {
-  color: $main-color;
-  text-shadow: 0 0 15px $main-color;
+  color: #00fff2;
+  text-shadow: 0 0 15px #00fff2;
 }
 
 /* =========================
    ИЗОБРАЖЕНИЯ
 ========================= */
-
 .img-responsive {
-  @include glow($main-color);
+  box-shadow: 0 0 20px #00fff2;
   border-radius: 15px;
 }
 
 /* =========================
    ПАНЕЛИ
 ========================= */
-
 .panel {
-  background: $dark-bg;
-  border: 1px solid $main-color;
-  @include glow($main-color);
-
-  .panel-heading {
-    font-weight: bold;
-  }
+  background: #111;
+  border: 1px solid #00fff2;
+  box-shadow: 0 0 20px #00fff2;
+}
+.panel .panel-heading {
+  font-weight: bold;
 }
 
 /* =========================
    КНОПКИ
 ========================= */
-
 .btn-primary {
-  background-color: $main-color;
+  background-color: #00fff2;
   border: none;
   color: #000;
-
-  &:hover {
-    background-color: $accent-color;
-    color: $text-color;
-  }
+}
+.btn-primary:hover {
+  background-color: #ff00c8;
+  color: #ffffff;
 }
 
 /* =========================
    ТАБЛИЦЫ
 ========================= */
-
 .table {
-  background: $dark-bg;
-  color: $text-color;
-
-  &-striped > tbody > tr:nth-of-type(odd) {
-    background-color: $panel-bg;
-  }
+  background: #111;
+  color: #ffffff;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #1c1c1c;
 }
 
 /* =========================
    INPUT GROUP
 ========================= */
-
 .input-group-addon {
-  background: $main-color;
+  background: #00fff2;
   color: #000;
   border: none;
 }
@@ -128,34 +98,35 @@ h1, h2 {
 /* =========================
    FOOTER
 ========================= */
-
 footer {
   margin-top: 40px;
   padding: 20px;
-  @include center-text;
+  text-align: center;
   color: #aaa;
 }
 
-/* затемнённый фон */
+/*# sourceMappingURL=css4.css.map */
+
+/* для открытия картинки */
+
 .image-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
 
-    background: rgba(0,0,0,0.85);
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0,0,0,0.9);
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    z-index: 10000;
+    z-index: 9999;
 }
 
-/* увеличенная картинка */
 .image-overlay img {
     max-width: 90%;
     max-height: 90%;
-    border-radius: 10px;
 }

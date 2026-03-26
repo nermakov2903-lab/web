@@ -128,11 +128,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
     /* КНОПКА СТАТИСТИКИ */
 
-    var statButton = document.getElementById("statsBtn");
-
-    statButton.addEventListener("click", function () {
-        console.log("Нажата кнопка 'Показать статистику'");
-    });
+//    var statButton = document.getElementById("statsBtn");
+//
+//    statButton.addEventListener("click", function () {
+//        console.log("Нажата кнопка 'Показать статистику'");
+//    });
 
 
 

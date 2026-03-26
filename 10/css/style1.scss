@@ -135,27 +135,3 @@ footer {
   @include center-text;
   color: #aaa;
 }
-
-/* затемнённый фон */
-.image-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0,0,0,0.85);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    z-index: 10000;
-}
-
-/* увеличенная картинка */
-.image-overlay img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-}

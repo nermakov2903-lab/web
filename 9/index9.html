@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="js/script.js" defer></script>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/css4.css">
 </head>
@@ -112,27 +111,51 @@
 
     <!-- Игры -->
     <div class="row" id="games">
-        <div class="col-xs-12">
-            <h2 class="text-center">Игры</h2>
-        </div>
 
-        <div class="col-sm-4">
-            <table class="table table-striped table-bordered">
-                <tr><th>Игра</th></tr>
-                <tr><td>GTA 5</td></tr>
-                <tr><td>FarCry 6</td></tr>
-                <tr><td>Valorant</td></tr>
-            </table>
-        </div>
+    <div class="col-xs-12">
+    <h2 class="text-center">Игры</h2>
+    </div>
 
-        <div class="col-sm-8">
-            <div class="input-group">
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-search"></span>
-                </span>
-                <input type="text" class="form-control" placeholder="Поиск игры">
-            </div>
-        </div>
+    <!-- ЛЕВАЯ ЧАСТЬ (таблица) -->
+    <div class="col-sm-4">
+
+    <table class="table table-striped table-bordered">
+    <thead>
+    <tr><th>Игра</th></tr>
+    </thead>
+
+    <tbody id="gamesBody">
+    <tr><td>GTA 5</td></tr>
+    <tr><td>FarCry 6</td></tr>
+    <tr><td>Valorant</td></tr>
+    </tbody>
+    </table>
+
+    <button id="addGameBtn" class="btn btn-success">
+    Добавить игру
+    </button>
+
+    <button id="removeGameBtn" class="btn btn-danger">
+    Удалить последнюю
+    </button>
+
+    </div>
+
+
+    <!-- ПРАВАЯ ЧАСТЬ (поиск) -->
+    <div class="col-sm-8">
+
+    <div class="input-group">
+    <span class="input-group-addon">
+    <span class="glyphicon glyphicon-search"></span>
+    </span>
+
+    <input type="text" class="form-control" placeholder="Поиск игры">
+
+    </div>
+
+    </div>
+
     </div>
 
     <hr>
@@ -173,6 +196,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!--Скрипт выполнится после загрузки HTML.-->
+<script src="js/script.js" defer></script>
 
 </body>
 </html>
