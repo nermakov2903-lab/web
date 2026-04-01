@@ -132,4 +132,31 @@ footer {
 }
 
 
+/* =========================
+   COOKIE BANNER
+========================= */
 
+#cookieBanner{
+
+position: fixed;
+
+bottom: -80px;   /* сначала скрыт за экраном */
+left: 0;
+
+width: 100%;
+
+background: #111;
+color: #fff;
+
+padding: 50px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+
+box-shadow: 0 -2px 15px rgba(0,255,242,0.6);
+
+z-index: 9999;
+
+}

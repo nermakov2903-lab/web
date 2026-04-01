@@ -62,23 +62,23 @@ return sum;
 ВЫВОД СТАТИСТИКИ
 ===================================== */
 
-function calculateStats() {
-
-var result =
-    "Игровые часы: " + hours + "<br>" +
-    "Общее количество часов: " + sumHours(hours) + "<br>" +
-    "Сессий больше 4 часов: " + countLongSessions(hours) + "<br>" +
-    "Сумма квадратов часов: " + sumSquares(hours);
-
-document.getElementById("result").innerHTML = result;
-
-}
+//function calculateStats() {
+//
+//var result =
+//    "Игровые часы: " + hours + "<br>" +
+//    "Общее количество часов: " + sumHours(hours) + "<br>" +
+//    "Сессий больше 4 часов: " + countLongSessions(hours) + "<br>" +
+//    "Сумма квадратов часов: " + sumSquares(hours);
+//
+//document.getElementById("result").innerHTML = result;
+//
+//}
 
 /* =====================================
 ПОСЛЕ ЗАГРУЗКИ СТРАНИЦЫ
 ===================================== */
 
-window.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function () {
 
 console.log("=== ИНФОРМАЦИЯ О СТРАНИЦЕ ===");
 
@@ -105,39 +105,41 @@ for (var i = 0; i < document.anchors.length; i++) {
 
 
 
-var statButton = document.getElementById("statsBtn");
+$("#statsBtn").click(function () {
 
-if (statButton) {
-    statButton.addEventListener("click", function () {
-        console.log("Нажата кнопка 'Показать статистику'");
-    });
+    console.log("Нажата кнопка 'Показать статистику'");
+
+});
+
+
+
+$("#about img").mouseover(function () {
+
+console.log("Навели курсор на изображение клуба");
+
+});
+
+
+
+$("input[type='text']").keyup(function () {
+
+console.log("Пользователь вводит текст: " + $(this).val()); //получить значение input.
+
+});
+
+var savedName = getCookie("username");
+
+if(savedName){
+
+$("input[name='username']").val(savedName);
+
 }
 
+if(getCookie("cookieConsent") !== "true"){
 
-
-var img = document.querySelector("#about img");
-
-if (img) {
-
-    img.addEventListener("mouseover", function () {
-
-        console.log("Навели курсор на изображение клуба");
-
-    });
-
-}
-
-
-
-var search = document.querySelector("input[type='text']");
-
-if (search) {
-
-    search.addEventListener("keyup", function () {
-
-        console.log("Пользователь вводит текст: " + search.value);
-
-    });
+$("#cookieBanner").animate({
+bottom: "0px"
+},600);
 
 }
 
@@ -277,39 +279,29 @@ console.log("Средний результат:", scores.average());
 ДИНАМИЧЕСКОЕ ИЗМЕНЕНИЕ DOM
 ===================================== */
 
-window.addEventListener("DOMContentLoaded", function () {
+//window.addEventListener("DOMContentLoaded", function () {
+$(function () {
 
-    // 1. Выбор элементов разными способами
-    var table = document.getElementById("gamesBody");; // по id
-    var addBtn = document.querySelector("#addGameBtn"); // через CSS селектор
-    var removeBtn = document.querySelector("#removeGameBtn");
+    // 1. Выбор элементов разными способами работает как CSS-селектор.
+    $("#gamesBody")
+    $("#addGameBtn")
+    $("input[type='text']")
 
     // 2. Добавление игры
-    addBtn.addEventListener("click", function () {
+    $("#addGameBtn").click(function () {
 
-        var gameName = prompt("Введите название игры:");
+    var gameName = prompt("Введите название игры:");
 
-        if (!gameName) return;
+    if (!gameName) return;
 
-        var tr = document.createElement("tr");
-        var td = document.createElement("td");
-
-        td.textContent = gameName;
-
-        tr.appendChild(td);
-
-        table.appendChild(tr);
+    $("#gamesBody").append("<tr><td>" + gameName + "</td></tr>");
 
     });
 
     // 3. Удаление последней игры
-    removeBtn.addEventListener("click", function () {
+    $("#removeGameBtn").click(function () {
 
-        var rows = table.getElementsByTagName("tr");
-
-        if (rows.length > 0) {
-            table.removeChild(rows[rows.length - 1]);
-        }
+    $("#gamesBody tr:last").remove();
 
     });
 
@@ -365,14 +357,19 @@ var comment = form.comment;
 только если выбрана игра
 ===================== */
 
-comment.disabled = true;
+//comment.disabled = true;
+$("textarea[name='comment']").prop("disabled", true);
 
-gameSelect.addEventListener("change", function () {
+$("select[name='game']").change(function () {
 
-if (gameSelect.value !== "") {
-    comment.disabled = false;
+if ($(this).val() !== "") {
+
+$("textarea[name='comment']").prop("disabled", false);
+
 } else {
-    comment.disabled = true;
+
+$("textarea[name='comment']").prop("disabled", true);
+
 }
 
 });
@@ -403,30 +400,32 @@ submitBtn.style.color = "";
 ПРОВЕРКА ФОРМЫ
 ===================== */
 
-form.addEventListener("submit", function (event) {
+$("#bookingForm").submit(function (event) {
 
-event.preventDefault(); // ОСТАНАВЛИВАЕМ отправку формы
+event.preventDefault(); // чтобы отменить стандартную отправку формы.
 
-if (!nameInput.value) {
+var name = $("input[name='username']").val();
+var password = $("input[name='password']").val();
+var game = $("select[name='game']").val();
 
+if (!name) {
 alert("Введите имя");
 return;
-
 }
 
-if (passwordInput.value.length < 4) {
-
-alert("Пароль должен быть минимум 4 символа");
+if (password.length < 4) {
+alert("Пароль минимум 4 символа");
 return;
-
 }
 
-if (gameSelect.value === "") {
-
+if (!game) {
 alert("Выберите игру");
 return;
-
 }
+
+console.log("Форма отправлена");
+
+setCookie("username", name, 365);
 
 /* =====================
 СБОР ДАННЫХ В ОБЪЕКТ
@@ -434,18 +433,121 @@ return;
 
 var data = {
 
-name: nameInput.value,
-password: passwordInput.value,
-seat: form.seat.value,
-snacks: form.snacks.checked,
-drink: form.drink.checked,
-game: gameSelect.value,
-comment: comment.value
+name: $("input[name='username']").val(),
+password: $("input[name='password']").val(),
+seat: $("input[name='seat']:checked").val(),
+snacks: $("input[name='snacks']").prop("checked"),
+drink: $("input[name='drink']").prop("checked"),
+game: $("select[name='game']").val(),
+comment: $("textarea[name='comment']").val()
 
 };
 
 console.log("Данные формы:", data);
 
 });
+
+});
+
+
+/* =====================================
+JQUERY АНИМАЦИЯ УСЛУГ
+===================================== */
+
+jQuery.fx.speeds.turtle = 400;
+
+$("#services").hide();
+
+$("#servicesBtn").click(function(){
+
+$("#services").slideToggle("turtle");
+
+});
+
+//--------------
+
+$("#equipment img").hover(function(){
+
+$(this).fadeTo(100, 0.4);
+
+}, function(){
+
+$(this).fadeTo(100, 1);
+
+});
+
+$("#about img").hover(
+
+function(){
+
+$(this).animate({
+marginLeft: "10px"
+},300);
+
+},
+
+function(){
+
+$(this).animate({
+marginLeft: "0px"
+},300);
+
+}
+
+);
+
+/* =====================================
+COOKIE FUNCTIONS
+===================================== */
+
+function setCookie(name, value, days){
+
+var encodedValue = encodeURIComponent(value);
+
+var maxAge = days * 24 * 60 * 60;
+
+document.cookie = name + "=" + encodedValue + "; max-age=" + maxAge + "; path=/";
+
+}
+
+
+function getCookie(name){
+
+var cookies = document.cookie.split(";");
+
+for(var i = 0; i < cookies.length; i++){
+
+var c = cookies[i].trim();
+
+if(c.indexOf(name + "=") === 0){
+
+return decodeURIComponent(c.substring(name.length + 1));
+
+}
+
+}
+
+return null;
+
+}
+
+
+function delCookie(name){
+
+document.cookie = name + "=; max-age=0; path=/";
+
+}
+
+var consent = getCookie("cookieConsent");
+
+if(consent === "true"){
+$("#cookieBanner").hide();
+}
+
+$("#acceptCookies").click(function(){
+
+setCookie("cookieConsent","true",365);
+
+$("#cookieBanner").fadeOut();
 
 });
